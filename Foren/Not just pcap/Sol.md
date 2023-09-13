@@ -77,7 +77,7 @@ FFmpeg của tôi không thể giải mã các luồng LATM trực tiếp. Bằn
 
 => chạy acc.py để nhận file LOAS
 
-Luồng LOAS có thể được chuyển đổi bằng ffmpeg -i out.acc radio.wav hoặc phát trực tiếp bằng VLC.
+Luồng LOAS có thể được chuyển đổi bằng `ffmpeg -i out.acc radio.wav` hoặc phát trực tiếp bằng VLC.
 
 Âm thanh có nội dung sau:
 
