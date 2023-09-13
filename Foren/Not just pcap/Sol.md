@@ -73,9 +73,11 @@ Việc giải mã cho LATM có chút phức tạp trong tài liệu ISO. Đối 
 
 FFmpeg của tôi không thể giải mã các luồng LATM trực tiếp. Bằng cách kiểm tra [ffmpeg source code](https://github.com/FFmpeg/FFmpeg/blob/67cc7aaa51fcd781ac5920d3c739e28c81cbb0cb/libavcodec/aacdec.c#L481-L501), FFmpeg hỗ trợ LATM, nhưng nó yêu cầu tiêu đề LOAS. Vì vậy, để giải mã luồng LATM, bạn có thể đơn giản là thêm tiêu đề LOAS vào mỗi AudioMuxElement, điều này làm cho nó có thể đọc được bằng thư viện libavcodec của FFmpeg.  
 
-Bắt các gói tin bằng bộ lọc rtp (hoặc a2dp) qua Wireshark -> Xuất gói tin cụ thể, sau đó chạy [acc.py](https://github.com/KMANVK/hitcon-ctf-2023/blob/main/Foren/Not%20just%20pcap/acc.py) để tạo luồng LOAS.
+`tshark -r ./release-7ecaf64448a034214d100258675ca969d2232f54.pcapng -Y "rtp" -T fields -e data.data > raw_hex` 
 
-Luồng LOAS có thể được chuyển đổi bằng ffmpeg -i radio.loas radio.wav hoặc phát trực tiếp bằng VLC.
+=> chạy acc.py để nhận file LOAS
+
+Luồng LOAS có thể được chuyển đổi bằng ffmpeg -i out.acc radio.wav hoặc phát trực tiếp bằng VLC.
 
 Âm thanh có nội dung sau:
 
