@@ -25,7 +25,7 @@ Trong tệp pcap này, bạn cần tìm thông tin ẩn dấu trong lưu lượn
 ![Alt text](image-1.png)
 Bạn có thể sử dụng bộ lọc usb.transfer_type == 2 && usb.bDescriptorType == 4 && usb.bInterfaceClass == 3 để tìm DESCRIPTOR CẤU HÌNH tương ứng của chúng, và kiểm tra bInterfaceProtocol trong DESCRIPTOR GIAO DIỆN để xác định loại thiết bị (1 cho bàn phím, 2 cho chuột). Chi tiết về cách xác định loại thiết bị này có trong [Device Class Definition for HID 1.11](https://www.usb.org/document-library/device-class-definition-hid-111) - 4.3 Protocol.
 
-Bằng cách trích xuất các phím bàn phím ([parse_keyboard.py]())<sup>1</sup>, và chúng ta nhận được nội dung như sau :
+Bằng cách trích xuất các phím bàn phím ([parse_keyboard.py](https://github.com/KMANVK/hitcon-ctf-2023/blob/main/Foren/Not%20just%20pcap/parse_keyboard.py))<sup>1</sup>, và chúng ta nhận được nội dung như sau :
 ```
 radio.chal.hitconctf.com
 
